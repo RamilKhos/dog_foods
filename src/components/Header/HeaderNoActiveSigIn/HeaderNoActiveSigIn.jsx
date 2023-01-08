@@ -3,10 +3,10 @@ import stylesHeader from '../styles.module.scss'
 
 export function HeaderNoActiveSigIn() {
   return (
-    <div className="d-flex justify-content-center align-items-center py-1">
+    <div className="d-flex justify-content-center align-items-center">
       <div className="d-flex align-items-center">
-        <img src={logoDog} width={100} alt="logo_dog" />
-        <h3 className={`${stylesHeader.caption} ms-4 `}>DogFoot</h3>
+        <img src={logoDog} width={80} alt="logo_dog" />
+        <h3 className={`${stylesHeader.caption} ms-2 `}>DogFoot</h3>
       </div>
     </div>
   )

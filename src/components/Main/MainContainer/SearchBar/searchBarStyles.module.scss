@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+.search {
+    &__container {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: .5rem;
+        padding-bottom: .1rem;
+
+        position: relative;
+    }
+    
+    &__input {
+        width: 100%;
+        padding: .1rem 5.5rem .1rem 3rem;
+        font-size: 1.1rem;
+        line-height: 18px;
+
+        background-color: transparent;
+        color: #E0DAAE;
+        opacity: .8;
+
+        border: .1rem solid #E0DAAE;
+        border-radius: 50px;
+
+        transition: transform 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        
+        &::placeholder {
+            font-size: .8rem;
+            color: #E0DAAE;
+            text-transform: uppercase;
+            opacity: .6;
+            letter-spacing: .1rem;
+        }
+        
+        &:hover,
+        &:focus {
+            font-size: 1.2rem;
+            padding: .1rem 5.5rem .1rem 3rem;
+            outline: 0;
+            opacity: .8;
+            
+            border: 1px solid transparent;
+            border-bottom: 1px solid #E0DAAE;
+            border-radius: 10px;
+            background-position: 100% center;
+        }
+    }
+}
+.magnifier {
+    position: absolute;
+    top:33%;
+    right: 3%;
+    opacity: .6;
+    color: #E0DAAE;
+}
