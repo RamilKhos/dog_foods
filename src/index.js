@@ -11,17 +11,8 @@ import { ProfileForm } from './components/ProfileForm/ProfileForm'
 import { store } from './redux/store'
 import { Cart } from './components/Cart/Cart'
 import { ProductDetailPage } from './components/ProductDetailPage/ProductDetailPage'
-import { FilterContextProvider } from './components/FilterContext/FilterContextProvider'
 
-// const queryClient = new QueryClient()
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-})
+const queryClient = new QueryClient()
 
 const myRouter = createBrowserRouter([
   {
@@ -62,9 +53,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <FilterContextProvider>
-          <RouterProvider router={myRouter} />
-        </FilterContextProvider>
+        <RouterProvider router={myRouter} />
       </QueryClientProvider>
     </Provider>
   </React.StrictMode>,

@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable no-underscore-dangle */
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
