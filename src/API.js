@@ -1,6 +1,7 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-shadow */
 import React from 'react'
+// import { useFilterContextData } from './components/FilterContext/FilterContextProvider'
 import {
   BASE_URL, CONTENT_TYPE, GROUP_ID, TOKEN_KEY_IN_LS,
 } from './const_variables/const_variables'
@@ -53,7 +54,7 @@ class API extends React.Component {
     })
   }
 
-  // Показать все продукты
+  // Получить все продукты, не используется!!! В useMainContainer находится актуальный запрос
   showAllProduct() {
     const token = localStorage.getItem(TOKEN_KEY_IN_LS)
     if (token) {

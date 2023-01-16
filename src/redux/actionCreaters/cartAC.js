@@ -29,7 +29,7 @@ export const addDataProductsInCart = (products) => ({
   payload: products,
 })
 
-export const deleteProductsFromCart = (id) => ({
+export const deleteProductFromCart = (id) => ({
   type: DELETE_PRODUCT_FROM_CART,
   payload: id,
 })

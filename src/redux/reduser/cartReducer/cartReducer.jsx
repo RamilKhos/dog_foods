@@ -2,10 +2,8 @@
 /* eslint-disable default-param-last */
 import { initialState } from '../../initialState'
 import {
-  ADD_DATA_PRODUCTS_IN_CART, DECREMENT_COUNT_PRODUCT, DELETE_PRODUCT_FROM_CART, GET_ID_PRODUCT,
-  INCREMENT_COUNT_PRODUCT,
-  SELECTED_PRODUCTS_IN_CART,
-  SELECTED_PRODUCT_IN_CART,
+  ADD_DATA_PRODUCTS_IN_CART, DECREMENT_COUNT_PRODUCT, DELETE_PRODUCT_FROM_CART,
+  GET_ID_PRODUCT, INCREMENT_COUNT_PRODUCT, SELECTED_PRODUCTS_IN_CART, SELECTED_PRODUCT_IN_CART,
 } from '../../types/types'
 
 export const cartReducer = (state = initialState.cart, action) => {

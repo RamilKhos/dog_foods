@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {
-  decrementCountProduct, deleteProductsFromCart, incrementCountProduct, selectedProductInCart,
+  decrementCountProduct, deleteProductFromCart, incrementCountProduct, selectedProductInCart,
 } from '../../../../redux/actionCreaters/cartAC'
 import styles from './cartStylesLeftBlock.module.scss'
 
@@ -33,7 +33,7 @@ export function CartWithGoodsLeftBlock({ product }) {
 
   // Удалить
   const btnDeleteProductHandler = () => {
-    dispatch(deleteProductsFromCart(product.id))
+    dispatch(deleteProductFromCart(product.id))
   }
 
   // Checkbox

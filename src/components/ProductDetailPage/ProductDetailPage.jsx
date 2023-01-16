@@ -1,41 +1,23 @@
 /* eslint-disable no-shadow */
-import { Link, useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { useDispatch } from 'react-redux'
-import { useState } from 'react'
-import { api } from '../../API'
+import { Link } from 'react-router-dom'
 import styles from './productDetailPageStyles.module.scss'
-import { PRODUCT_QUERY_KEY } from '../../const_variables/const_variables'
 import { Loader } from '../Loader/Loader'
 import { MainErrorScreen } from '../MainErrorScreen/MainErrorScreen'
-import { getIdProduct } from '../../redux/actionCreaters/cartAC'
+import { useProductDetailPage } from './useProductDetailPage'
 
 export function ProductDetailPage() {
-  const [addBtnDisabled, setAddBtnDisabled] = useState(false)
-  const { id } = useParams()
-  const dispatch = useDispatch()
-
-  const getProduckQueryKey = (id) => [PRODUCT_QUERY_KEY, id]
-
-  const { data: product, isError, isLoading } = useQuery({
-    queryKey: getProduckQueryKey(id),
-    queryFn: () => api.getProductById(id)
-      .then((response) => {
-        if (response.status === 200) return response.json()
-        throw response
-      }),
-  })
-
-  const addProductInCart = () => {
-    dispatch(getIdProduct(id))
-    setAddBtnDisabled(true)
-  }
+  const {
+    checkProductInCart,
+    product,
+    isError,
+    isLoading,
+    addProductInCart,
+  } = useProductDetailPage()
 
   if (isLoading) return <Loader />
   if (isError) return <MainErrorScreen />
 
   return (
-
     <div className={styles.container}>
       <div className={styles.single_product}>
         <div className={styles.row}>
@@ -66,7 +48,7 @@ export function ProductDetailPage() {
                   {product.likes.length}
                 </span>
                 <div>
-                  <button type="button"><span className={styles.review}>{`${product.reviews.length} Review`}</span></button>
+                  <button type="button"><span className={styles.review}>{`${product.reviews.length} Отзывы`}</span></button>
                 </div>
 
               </div>
@@ -93,9 +75,9 @@ export function ProductDetailPage() {
 
               <span className={styles.divider} />
               <div className={styles.product_btn_group}>
-                {!addBtnDisabled
-                  ? <button onClick={addProductInCart} disabled={addBtnDisabled} type="button" className={`${styles.button_42} ${styles.button}`}>Добавить в корзину</button>
-                  : <button disabled={addBtnDisabled} type="button" className={`${styles.button_42} ${styles.button}`}>Товар в корзине</button>}
+                {!checkProductInCart
+                  ? <button onClick={addProductInCart} type="button" className={`${styles.button_42} ${styles.button}`}>Добавить в корзину</button>
+                  : <button disabled type="button" className={`${styles.button_42} ${styles.button}`}>Товар в корзине</button>}
 
                 <div className={`${styles.button_favourite}`}>
                   <i className="fa-regular fa-heart" />

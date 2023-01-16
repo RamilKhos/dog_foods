@@ -1,4 +1,5 @@
 import { Checkbox, FormControlLabel } from '@mui/material'
+import { Link } from 'react-router-dom'
 import { Loader } from '../../Loader/Loader'
 import { MainErrorScreen } from '../../MainErrorScreen/MainErrorScreen'
 import styles from '../cartStyles.module.scss'
@@ -8,9 +9,7 @@ import { useCartWithGoods } from './customHooks/useCartWithGoods'
 
 export function СartWithGoods() {
   const {
-    // ОТКУДА ЗДЕСЬ ЭТОТ cheked, ОН НЕ ПЕРЕДАЕТСЯ С ХУКА useCartWithGoods()
-    // НО БЕЗ НЕГО НЕ РАБОТАЕТ
-    isError, isLoading, checkboxAllSelectedHandler, checked, productsToCart,
+    isError, isLoading, checkboxAllSelectedHandler, productsToCart, checkSelectedProducts,
   } = useCartWithGoods()
 
   if (isLoading) return <Loader />
@@ -18,6 +17,13 @@ export function СartWithGoods() {
 
   return (
     <>
+      <div className={styles.breadcrumb}>
+        <Link to="/" className={styles.link}>
+          <i className="fa-solid fa-arrow-left" />
+          <span className={styles.link}>Вернуться к покупкам</span>
+        </Link>
+      </div>
+
       <h1 className={`${styles.cart_title}`}>Корзина</h1>
       <div className={`${styles.cart_tab_content}`}>
         <div className={`${styles.cart_items__products}`}>
@@ -27,7 +33,7 @@ export function СartWithGoods() {
               <FormControlLabel
                 control={(
                   <Checkbox
-                    checked={checked}
+                    checked={checkSelectedProducts}
                     onChange={(event) => {
                       checkboxAllSelectedHandler(event.target.checked)
                     }}
@@ -39,7 +45,9 @@ export function СartWithGoods() {
             </div>
 
             <div className={styles.mass_selection__delete_btn}>
-              Удалить выбранные
+              {checkSelectedProducts
+                ? <button type="button" aria-label="delete_selected">Удалить выбранные</button>
+                : <button disabled className={styles.btn} type="button" aria-label="delete_selected">Удалить выбранные</button>}
             </div>
           </div>
 

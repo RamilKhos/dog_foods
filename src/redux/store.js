@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import { TOKEN_KEY_IN_LS } from '../const_variables/const_variables'
+import { PRODUCTS_IN_CART, TOKEN_KEY_IN_LS } from '../const_variables/const_variables'
 import { checkTokenInLS } from './initialState'
 import { rootReducer } from './reduser/rootReduser'
 
@@ -10,3 +10,4 @@ store.subscribe(() => {
 })
 
 store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => localStorage.setItem(PRODUCTS_IN_CART, JSON.stringify(store.getState().cart)))
