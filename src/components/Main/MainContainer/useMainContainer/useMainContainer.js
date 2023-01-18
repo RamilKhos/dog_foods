@@ -2,13 +2,14 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { PRODUCTS_SEARCH_QUERY_KEY, BASE_URL_GET_PRODUCTS } from '../../../../const_variables/const_variables'
 import { useFilterContextData, useFilterContextMethods } from '../../../FilterContext/FilterContextProvider'
 import { useDebounce } from '../useDebounce/useDebounce'
 
 export const useMainContainer = () => {
-  const token = useSelector((store) => store.token)
+  const { token } = useSelector((store) => store.token)
+  const navigate = useNavigate()
 
   const [searchParams, setSearchParams] = useSearchParams()
   const [input, setInput] = useState(() => searchParams.get('q') ?? '')
@@ -46,5 +47,6 @@ export const useMainContainer = () => {
     isError,
     input,
     setInput,
+    navigate,
   }
 }

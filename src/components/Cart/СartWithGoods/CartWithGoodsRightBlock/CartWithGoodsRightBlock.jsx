@@ -12,7 +12,7 @@ export function CartWithGoodsRightBlock() {
   const isDiscount = []
 
   cart.forEach((element) => {
-    if (element.selected) {
+    if (element.isSelected) {
       finalPriceWithoutDiscount += element.price * element.count
       totalDiscountedPrice += (element.price - element.discount) * element.count
       finalCount += element.count

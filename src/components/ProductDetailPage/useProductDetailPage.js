@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getIdProduct } from '../../redux/actionCreaters/cartAC'
 import { PRODUCT_QUERY_KEY } from '../../const_variables/const_variables'
 import { api } from '../../API'
+import { getIdProduct } from '../../redux/slices/cartSlice/cartSlice'
 
 export const useProductDetailPage = () => {
   const { id } = useParams()
+
   const dispatch = useDispatch()
   const productsInCart = useSelector((store) => store.cart)
+  console.log({ productsInCart })
   const checkProductInCart = productsInCart.some((elem) => elem.id === id)
 
   const getProduckQueryKey = () => [PRODUCT_QUERY_KEY, id]

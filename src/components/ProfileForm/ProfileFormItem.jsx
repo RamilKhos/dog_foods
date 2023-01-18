@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { deleteTokenAC } from '../../redux/actionCreaters/tokenAC'
+import { deleteToken } from '../../redux/slices/tokenSlice/tokenSlice'
 
 export function ProfileFormItems({
   avatar, name, about, email, closeModal,
@@ -9,8 +9,9 @@ export function ProfileFormItems({
   const dispatch = useDispatch()
 
   const exitOfProfile = () => {
-    dispatch(deleteTokenAC())
+    dispatch(deleteToken())
     navigate('login')
+    closeModal()
   }
 
   return (

@@ -1,7 +1,6 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-shadow */
 import React from 'react'
-// import { useFilterContextData } from './components/FilterContext/FilterContextProvider'
 import {
   BASE_URL, CONTENT_TYPE, GROUP_ID, TOKEN_KEY_IN_LS,
 } from './const_variables/const_variables'

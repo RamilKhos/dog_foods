@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {
   decrementCountProduct, deleteProductFromCart, incrementCountProduct, selectedProductInCart,
-} from '../../../../redux/actionCreaters/cartAC'
+} from '../../../../redux/slices/cartSlice/cartSlice'
 import styles from './cartStylesLeftBlock.module.scss'
 
 export function CartWithGoodsLeftBlock({ product }) {
@@ -52,7 +52,7 @@ export function CartWithGoodsLeftBlock({ product }) {
 
                 <div className={styles.cart_items__select_wrapper}>
                   <Checkbox
-                    checked={product.selected}
+                    checked={product.isSelected}
                     onChange={checkboxHandler}
                     inputProps={{ 'aria-label': 'controlled' }}
                     className={styles.cart_items__checkbox}

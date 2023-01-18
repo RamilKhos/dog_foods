@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { api } from '../../../../API'
-import { TOKEN_KEY_IN_LS } from '../../../../const_variables/const_variables'
-import { setTokenAC } from '../../../../redux/actionCreaters/tokenAC'
+import { addToken } from '../../../../redux/slices/tokenSlice/tokenSlice'
+// import { TOKEN_KEY_IN_LS } from '../../../../const_variables/const_variables'
 
 export function useSignIn() {
   const navigate = useNavigate()
@@ -24,8 +24,7 @@ export function useSignIn() {
     }),
 
     onSuccess: (data) => {
-      localStorage.setItem(TOKEN_KEY_IN_LS, JSON.stringify(data.token))
-      dispatch(setTokenAC(data.token))
+      dispatch(addToken(data.token))
       queryClient.invalidateQueries({ queryKey: ['signIn'] })
       return navigate('/')
     },

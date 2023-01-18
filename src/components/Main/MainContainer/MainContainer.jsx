@@ -9,7 +9,7 @@ import { useMainContainer } from './useMainContainer/useMainContainer'
 import style from './searchBarStyles.module.scss'
 
 export function MainContainer() {
-  const token = useSelector((store) => store.token)
+  const { token } = useSelector((store) => store.token)
 
   const {
     navigate, data, isLoading, isError, input, setInput,
