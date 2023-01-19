@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { PRODUCT_QUERY_KEY } from '../../const_variables/const_variables'
 import { api } from '../../API'
-import { getIdProduct } from '../../redux/slices/cartSlice/cartSlice'
+import { addItem } from '../../redux/slices/cartSlice/cartSlice'
 
 export const useProductDetailPage = () => {
+  const dispatch = useDispatch()
+
   const { id } = useParams()
 
-  const dispatch = useDispatch()
-  const productsInCart = useSelector((store) => store.cart)
-  console.log({ productsInCart })
-  const checkProductInCart = productsInCart.some((elem) => elem.id === id)
+  const cart = useSelector((store) => store.cart)
+  const checkProductInCart = cart.some((elem) => elem.id === id)
 
   const getProduckQueryKey = () => [PRODUCT_QUERY_KEY, id]
 
@@ -25,7 +25,7 @@ export const useProductDetailPage = () => {
   })
 
   const addProductInCart = () => {
-    dispatch(getIdProduct(id))
+    dispatch(addItem(id))
   }
 
   return {

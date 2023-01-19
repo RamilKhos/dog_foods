@@ -16,7 +16,7 @@ export function WithSelectedGoods({
             </div>
 
             {/* итоговая цена */}
-            {isDiscount.some((elem) => elem === true) ? (
+            {isDiscount.some((elem) => elem) ? (
               <div className={`${styles.price}`}>
                 <span className={`${styles.price__block_price_offer_crossed_out}`}>{`${finalPriceWithoutDiscount} ₽`}</span>
                 <div className={`${styles.price__block} ${styles.price__block_main}`}>

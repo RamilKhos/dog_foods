@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { Checkbox, FormControlLabel } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { Loader } from '../../Loader/Loader'
@@ -9,7 +10,8 @@ import { useCartWithGoods } from './customHooks/useCartWithGoods'
 
 export function СartWithGoods() {
   const {
-    isError, isLoading, checkboxAllSelectedHandler, productsToCart, checkSelectedProducts,
+    products, isError, isLoading, checkboxAllSelectedHandler, checkSelectedProducts,
+    checkSelectedProduct, deleteSelectedProducts,
   } = useCartWithGoods()
 
   if (isLoading) return <Loader />
@@ -45,20 +47,20 @@ export function СartWithGoods() {
             </div>
 
             <div className={styles.mass_selection__delete_btn}>
-              {checkSelectedProducts
-                ? <button type="button" aria-label="delete_selected">Удалить выбранные</button>
+              {checkSelectedProduct
+                ? <button onClick={deleteSelectedProducts} type="button" aria-label="delete_selected">Удалить выбранные</button>
                 : <button disabled className={styles.btn} type="button" aria-label="delete_selected">Удалить выбранные</button>}
             </div>
           </div>
 
           <div className={styles.left_block}>
-            {productsToCart.map(((product) => (
-              <CartWithGoodsLeftBlock key={product.id} product={product} />
+            {products.map(((product) => (
+              <CartWithGoodsLeftBlock key={product._id} product={product} />
             )))}
           </div>
 
         </div>
-        <CartWithGoodsRightBlock />
+        <CartWithGoodsRightBlock products={products} />
       </div>
     </>
   )

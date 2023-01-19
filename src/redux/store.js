@@ -10,12 +10,12 @@ export const store = configureStore({
   },
 })
 
-store.subscribe(() => { localStorage.getItem(TOKEN_KEY_IN_LS) })
-
 store.subscribe(() => {
   localStorage.setItem(TOKEN_KEY_IN_LS, JSON.stringify(store.getState().token.token))
 })
 
-store.subscribe(() => localStorage.setItem(PRODUCTS_IN_CART, JSON.stringify(store.getState().cart)))
+store.subscribe(() => {
+  localStorage.setItem(PRODUCTS_IN_CART, JSON.stringify(store.getState().cart))
+})
 
 store.subscribe(() => console.log(store.getState()))

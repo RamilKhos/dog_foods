@@ -1,45 +1,15 @@
+/* eslint-disable no-underscore-dangle */
 import { Checkbox } from '@mui/material'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import {
-  decrementCountProduct, deleteProductFromCart, incrementCountProduct, selectedProductInCart,
-} from '../../../../redux/slices/cartSlice/cartSlice'
+
 import styles from './cartStylesLeftBlock.module.scss'
+import { useCartWithGoodsLeftBlock } from './useCartWithGoodsLeftBlock'
 
 export function CartWithGoodsLeftBlock({ product }) {
-  const [btnMinusState, setBtnMinusState] = useState(false)
-  const [btnPlusState, setBtnPlusState] = useState(false)
-  const dispatch = useDispatch()
-
-  // Плюс
-  const btnPlusHandler = () => {
-    if (product.count === product.stock) {
-      setBtnPlusState(true)
-      return setBtnMinusState(false)
-    }
-    setBtnMinusState(false)
-    return dispatch(incrementCountProduct(product.id))
-  }
-
-  // Минус
-  const btnMinusHandler = () => {
-    if (product.count === 1) {
-      return setBtnMinusState(true)
-    }
-    setBtnPlusState(false)
-    return dispatch(decrementCountProduct(product.id))
-  }
-
-  // Удалить
-  const btnDeleteProductHandler = () => {
-    dispatch(deleteProductFromCart(product.id))
-  }
-
-  // Checkbox
-  const checkboxHandler = () => {
-    dispatch(selectedProductInCart(product.id))
-  }
+  const {
+    cartItem, btnMinusState, btnPlusState, btnPlusHandler,
+    btnMinusHandler, btnDeleteProductHandler, checkboxHandler,
+  } = useCartWithGoodsLeftBlock({ product })
 
   return (
     <div>
@@ -52,7 +22,7 @@ export function CartWithGoodsLeftBlock({ product }) {
 
                 <div className={styles.cart_items__select_wrapper}>
                   <Checkbox
-                    checked={product.isSelected}
+                    checked={cartItem.isSelected}
                     onChange={checkboxHandler}
                     inputProps={{ 'aria-label': 'controlled' }}
                     className={styles.cart_items__checkbox}
@@ -83,7 +53,7 @@ export function CartWithGoodsLeftBlock({ product }) {
                     <i className={`${styles.count_buttons__icon} fa-solid fa-minus`} />
                   </button>
 
-                  <p className={`${styles.field_count}`}>{product.count}</p>
+                  <p className={`${styles.field_count}`}>{cartItem.count}</p>
 
                   <button onClick={btnPlusHandler} disabled={btnPlusState} type="button" className={`${styles.count_buttons__button} ${styles.count_buttons__button_plus}`}>
                     <i className={`${styles.count_buttons__icon} fa-solid fa-plus`} />
@@ -97,14 +67,14 @@ export function CartWithGoodsLeftBlock({ product }) {
 
                   {product.discount ? (
                     <>
-                      <span className={`${styles.price__block_price_offer} ${styles.price__block_price_offer_crossed_out}`}>{`${(product.price) * product.count} ₽`}</span>
+                      <span className={`${styles.price__block_price_offer} ${styles.price__block_price_offer_crossed_out}`}>{`${(product.price) * cartItem.count} ₽`}</span>
                       <div className={`${styles.price}`}>
                         <div className={`${styles.price__block}`}>
-                          <span className={`${styles.price__sales}`}>{`${(product.price - product.discount) * product.count} ₽`}</span>
+                          <span className={`${styles.price__sales}`}>{`${(product.price - product.discount) * cartItem.count} ₽`}</span>
                         </div>
                       </div>
                     </>
-                  ) : (<span className={`${styles.price__block_price_offer}`}>{`${(product.price * product.count)} ₽`}</span>)}
+                  ) : (<span className={`${styles.price__block_price_offer}`}>{`${(product.price * cartItem.count)} ₽`}</span>)}
 
                 </div>
               </div>

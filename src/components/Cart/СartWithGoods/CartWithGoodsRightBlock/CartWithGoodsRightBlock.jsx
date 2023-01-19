@@ -1,9 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 import { useSelector } from 'react-redux'
 import styles from './cartStylesRightBlock.module.scss'
 import { UnselectedGoods } from './UnselectedGoods/UnselectedGoods'
 import { WithSelectedGoods } from './WithSelectedGoods/WithSelectedGoods'
 
-export function CartWithGoodsRightBlock() {
+export function CartWithGoodsRightBlock({ products }) {
   const cart = useSelector((store) => store.cart)
 
   let totalDiscountedPrice = null
@@ -12,13 +13,14 @@ export function CartWithGoodsRightBlock() {
   const isDiscount = []
 
   cart.forEach((element) => {
-    if (element.isSelected) {
-      finalPriceWithoutDiscount += element.price * element.count
-      totalDiscountedPrice += (element.price - element.discount) * element.count
-      finalCount += element.count
-      isDiscount.push(Boolean(element.discount))
-    }
-    return element
+    products.forEach((product) => {
+      if (element.id === product._id && element.isSelected) {
+        finalPriceWithoutDiscount += product.price * element.count
+        totalDiscountedPrice += (product.price - product.discount) * element.count
+        finalCount += element.count
+        isDiscount.push(Boolean(product.discount))
+      }
+    })
   })
 
   return (

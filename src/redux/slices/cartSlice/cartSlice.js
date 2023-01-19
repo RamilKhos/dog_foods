@@ -1,83 +1,71 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-expressions */
-/* eslint-disable arrow-body-style */
-/* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
-/* eslint-disable no-underscore-dangle */
 import { createSlice } from '@reduxjs/toolkit'
+import { PRODUCTS_IN_CART } from '../../../const_variables/const_variables'
 
-const initialState = []
+const checkCartInLS = () => {
+  const check = localStorage.getItem(PRODUCTS_IN_CART)
+  if (check) {
+    return JSON.parse(check)
+  }
+  return []
+}
+
+const initialState = checkCartInLS()
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
 
-    getIdProduct: {
+    addItem: {
       reducer: (state, action) => {
         state.push(action.payload)
       },
       prepare: (id) => ({
         payload: {
           id,
-          count: 1,
           isSelected: true,
+          count: 1,
         },
       }),
     },
 
     incrementCountProduct: (state, action) => {
-      const index = state.findIndex((product) => product._id === action.payload)
-      if (index !== -1) {
-        state[index].count += 1
-      }
-    },
-
-    decrementCountProduct: (state, action) => {
-      const index = state.findIndex((product) => product._id === action.payload)
-      if (index !== -1) {
-        state[index].count -= 1
-      }
-    },
-
-    addDataProductsInCart: (state, action) => {
-      state.map((element) => {
-        action.payload.filter((elem) => {
-          if (element.id === elem._id) {
-            return Object.assign(element, elem)
-          }
-          return elem
-        })
-        return element
+      state.map((product) => {
+        product.id === action.payload ? product.count += 1 : product
       })
     },
 
-    deleteProductFromCart: (state, action) => {
-      return state.filter((product) => {
-        return product.id !== action.payload
+    decrementCountProduct: (state, action) => {
+      state.map((product) => {
+        product.id === action.payload ? product.count -= 1 : product
       })
     },
 
     selectedProductInCart: (state, action) => {
       state.map((product) => {
-        if (product.id === action.payload) {
-          console.log('Совпадение')
-          product.isSelected = !product.isSelected
-        }
-        return product
+        product.id === action.payload ? product.isSelected = !product.isSelected : product
       })
     },
 
     selectedProductsInCart: (state, action) => {
-      state.map((product) => {
-        return product.isSelected = action.payload
-      })
+      state.forEach((product) => { product.isSelected = action.payload })
     },
+
+    deleteProductFromCart: (state, action) => state.filter(
+      (product) => (product.id !== action.payload),
+    ),
+
+    deleteSelectedProductFromCart: (state) => state.filter((product) => !product.isSelected),
   },
 })
 
 export const {
-  getIdProduct, incrementCountProduct, decrementCountProduct,
-  addDataProductsInCart, deleteProductFromCart, selectedProductInCart, selectedProductsInCart,
+  incrementCountProduct, decrementCountProduct,
+  addItem, deleteProductFromCart, deleteSelectedProductFromCart, selectedProductInCart,
+  selectedProductsInCart,
 } = cartSlice.actions
 
 export const cartReducer = cartSlice.reducer
