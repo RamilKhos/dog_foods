@@ -4,7 +4,7 @@ import { HeaderNoActiveSigIn } from './HeaderNoActiveSigIn/HeaderNoActiveSigIn'
 import stylesHeader from './styles.module.scss'
 
 export function Header() {
-  const token = useSelector((store) => store.token)
+  const { token } = useSelector((store) => store.userInfo)
 
   return (
     <header className={`${stylesHeader.header}`}>

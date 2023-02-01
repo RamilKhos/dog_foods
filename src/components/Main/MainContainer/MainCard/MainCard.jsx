@@ -16,6 +16,15 @@ export function MainCard({
       <div className={`${styles.card}`}>
         <button onClick={clickBoxHandler} type="button" aria-label="">
           <div className={`${styles.box}`}>
+
+            {discount
+              ? (
+                <div className={styles.icon_sales}>
+                  <div className={styles.sales}>{`-${discount}%`}</div>
+                </div>
+              )
+              : null}
+
             <div className={`${styles.content}`}>
 
               <img src={pictures} className="card-img-top rounded mb-4" alt="{name}" />
@@ -26,7 +35,7 @@ export function MainCard({
                 {discount
                   ? (
                     <div className={styles.product_price}>
-                      <span className={styles.sale_price}>{`₽${price - discount}`}</span>
+                      <span className={styles.sale_price}>{`₽${price - (price * (discount / 100))}`}</span>
                       <span className={styles.offer_price_overline}>{`₽${price}`}</span>
                     </div>
                   )

@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-param-reassign */
@@ -54,9 +55,9 @@ export const cartSlice = createSlice({
       state.forEach((product) => { product.isSelected = action.payload })
     },
 
-    deleteProductFromCart: (state, action) => state.filter(
-      (product) => (product.id !== action.payload),
-    ),
+    deleteProductFromCart: (state, action) => {
+      return state.filter((product) => product.id !== action.payload)
+    },
 
     deleteSelectedProductFromCart: (state) => state.filter((product) => !product.isSelected),
   },

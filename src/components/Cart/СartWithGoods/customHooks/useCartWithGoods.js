@@ -17,7 +17,9 @@ export const useCartWithGoods = () => {
   const checkSelectedProducts = cart.every((elem) => elem.isSelected)
   const checkSelectedProduct = cart.some((elem) => elem.isSelected)
 
-  const { data: products, isError, isLoading } = useQuery({
+  const {
+    data: products, isError, isLoading, isFetching,
+  } = useQuery({
     queryKey: getQueryKeyProduct(cart.map((product) => product.id)),
     queryFn: () => api.getProductsById(cart)
       .then((response) => Promise.all(response.map((product) => product.json()))),
@@ -27,6 +29,7 @@ export const useCartWithGoods = () => {
     products,
     isError,
     isLoading,
+    isFetching,
     checkboxAllSelectedHandler,
     checkSelectedProducts,
     checkSelectedProduct,

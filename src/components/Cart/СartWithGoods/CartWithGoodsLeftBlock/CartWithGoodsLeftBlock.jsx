@@ -70,7 +70,7 @@ export function CartWithGoodsLeftBlock({ product }) {
                       <span className={`${styles.price__block_price_offer} ${styles.price__block_price_offer_crossed_out}`}>{`${(product.price) * cartItem.count} ₽`}</span>
                       <div className={`${styles.price}`}>
                         <div className={`${styles.price__block}`}>
-                          <span className={`${styles.price__sales}`}>{`${(product.price - product.discount) * cartItem.count} ₽`}</span>
+                          <span className={`${styles.price__sales}`}>{`${(product.price - (product.price * (product.discount / 100))) * cartItem.count} ₽`}</span>
                         </div>
                       </div>
                     </>

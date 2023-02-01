@@ -58,6 +58,35 @@
   text-align: center;
 }
 
+.icon_sales {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #ff1900;
+    background: #fc0000;
+    background: -moz-linear-gradient(top, #FC0000 0%, #FF0000 50%, #FA0000 100%);
+    background: -webkit-linear-gradient(top, #FC0000 0%, #FF0000 50%, #FA0000 100%);
+    background: linear-gradient(to bottom, #FC0000 0%, #FF0000 50%, #FA0000 100%);
+
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .sales {
+        color: rgb(255, 255, 255);
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+}
+
+
 
 .content img{
     position: absolute;

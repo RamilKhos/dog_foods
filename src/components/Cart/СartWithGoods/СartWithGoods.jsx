@@ -11,10 +11,10 @@ import { useCartWithGoods } from './customHooks/useCartWithGoods'
 export function СartWithGoods() {
   const {
     products, isError, isLoading, checkboxAllSelectedHandler, checkSelectedProducts,
-    checkSelectedProduct, deleteSelectedProducts,
+    checkSelectedProduct, deleteSelectedProducts, isFetching,
   } = useCartWithGoods()
 
-  if (isLoading) return <Loader />
+  if (isLoading || isFetching) return <Loader />
   if (isError) return <MainErrorScreen />
 
   return (

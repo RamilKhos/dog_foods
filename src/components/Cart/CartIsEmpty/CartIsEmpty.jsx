@@ -4,7 +4,7 @@ import styles from './cartEmprtyStyles.module.scss'
 export function CartIsEmpty() {
   const navigate = useNavigate()
 
-  const btnInCatalog = () => {
+  const btnHandler = () => {
     navigate('/')
   }
 
@@ -17,7 +17,7 @@ export function CartIsEmpty() {
         и добавьте его в корзину.
       </p>
       <div>
-        <button onClick={btnInCatalog} type="button" className={styles.button_42}>В каталог</button>
+        <button onClick={btnHandler} type="button" className={styles.button_42}>В каталог</button>
       </div>
 
     </div>

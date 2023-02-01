@@ -50,10 +50,68 @@
         }
     }
 }
+
 .magnifier {
     position: absolute;
     top:33%;
     right: 3%;
     opacity: .6;
     color: #E0DAAE;
+}
+
+.button_42 {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    pointer-events: auto;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 3rem;
+    width: 3rem;
+    z-index: 9;
+    border-radius: 50%;
+    transition: box-shadow .2s;
+
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;   
+
+    &:hover {
+        box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+    }
+}
+
+.filter_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+
+    .filter_items {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    button {
+        color: #E0DAAE;
+        opacity: .8;
+    }
+
+    button:hover {
+        text-decoration: underline;
+    }
 }

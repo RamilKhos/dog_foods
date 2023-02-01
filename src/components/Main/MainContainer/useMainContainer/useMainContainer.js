@@ -8,17 +8,20 @@ import { useFilterContextData, useFilterContextMethods } from '../../../FilterCo
 import { useDebounce } from '../useDebounce/useDebounce'
 
 export const useMainContainer = () => {
-  const { token } = useSelector((store) => store.token)
+  const { token } = useSelector((store) => store.userInfo)
+
   const navigate = useNavigate()
 
   const [searchParams, setSearchParams] = useSearchParams()
   const [input, setInput] = useState(() => searchParams.get('q') ?? '')
+  const [sort, setSort] = useState(() => searchParams.get('sort') ?? 'POPULAR')
+
   const { setSearch } = useFilterContextMethods()
   const debounceValue = useDebounce(input, 500)
 
   useEffect(() => {
-    setSearchParams({ q: input })
-  }, [input])
+    setSearchParams({ q: input, sort })
+  }, [input, sort])
 
   useEffect(() => {
     setSearch(debounceValue)
@@ -33,7 +36,7 @@ export const useMainContainer = () => {
   ).then((res) => res.json())
 
   const {
-    data, isLoading, isError,
+    data, isLoading, isError, isFetching,
   } = useQuery({
     queryKey: getProductsQueryKey(filters),
     queryFn: () => getAllProducts({
@@ -41,12 +44,19 @@ export const useMainContainer = () => {
     }),
   })
 
+  const btnAddHandler = () => {
+    navigate('add_product')
+  }
+
   return {
     data,
     isLoading,
+    isFetching,
     isError,
     input,
     setInput,
-    navigate,
+    btnAddHandler,
+    sort,
+    setSort,
   }
 }

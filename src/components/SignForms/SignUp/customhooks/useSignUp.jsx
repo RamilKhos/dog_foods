@@ -26,7 +26,7 @@ export function useSignUp() {
     }),
     onSuccess: (data) => {
       openModal()
-      window.localStorage.setItem(SIGN_UP_DATA_KEY_IN_LS, JSON.stringify(data))
+      localStorage.setItem(SIGN_UP_DATA_KEY_IN_LS, JSON.stringify(data))
       queryClient.invalidateQueries({ queryKey: ['signUp'] })
       setTimeout(() => navigate('/'), 3000)
     },

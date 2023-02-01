@@ -6,11 +6,8 @@
   }
 
 body {
-    /* background: #232427; */
-        /* background: #f9f6f6;
-        background: #EFE2BA; */
-        background: -webkit-linear-gradient(90deg, #454545,#212121);
-        background: linear-gradient(90deg, #454545,#212121);
+    background: -webkit-linear-gradient(90deg, #454545,#212121);
+    background: linear-gradient(90deg, #454545,#212121);
 }
 
 code {

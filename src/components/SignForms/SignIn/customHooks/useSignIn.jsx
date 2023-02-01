@@ -1,10 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { api } from '../../../../API'
-import { addToken } from '../../../../redux/slices/tokenSlice/tokenSlice'
-// import { TOKEN_KEY_IN_LS } from '../../../../const_variables/const_variables'
+import { addUserInfo } from '../../../../redux/slices/userInfoSlice/userInfoSlice'
 
 export function useSignIn() {
   const navigate = useNavigate()
@@ -24,7 +24,7 @@ export function useSignIn() {
     }),
 
     onSuccess: (data) => {
-      dispatch(addToken(data.token))
+      dispatch(addUserInfo({ token: data.token, userID: data.data._id, group: data.data.group }))
       queryClient.invalidateQueries({ queryKey: ['signIn'] })
       return navigate('/')
     },

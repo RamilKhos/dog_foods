@@ -12,6 +12,8 @@ import { store } from './redux/store'
 import { Cart } from './components/Cart/Cart'
 import { ProductDetailPage } from './components/ProductDetailPage/ProductDetailPage'
 import { FilterContextProvider } from './components/FilterContext/FilterContextProvider'
+import { Favourites } from './components/Favourites/Favourites'
+import { AddProduct } from './components/AddProduct/AddProduct'
 
 // const queryClient = new QueryClient()
 
@@ -46,12 +48,20 @@ const myRouter = createBrowserRouter([
         element: <ProfileForm />,
       },
       {
+        path: 'product/:id',
+        element: <ProductDetailPage />,
+      },
+      {
         path: 'cart',
         element: <Cart />,
       },
       {
-        path: 'product/:id',
-        element: <ProductDetailPage />,
+        path: 'favourites',
+        element: <Favourites />,
+      },
+      {
+        path: 'add_product',
+        element: <AddProduct />,
       },
     ],
   },
