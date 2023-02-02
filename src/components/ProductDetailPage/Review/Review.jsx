@@ -4,10 +4,10 @@ import {
 } from 'formik'
 import { Loader } from '../../Loader/Loader'
 import { ReviewItem } from './ReviewItem/ReviewItem'
-import styles from '../productDetailPageStyles.module.scss'
+import styles from '../styles.module.scss'
 import { Modal } from '../../Modal/Modal'
 import { validationSchemaAddProductReview } from './validationSchemaAddProductReview/validationSchemaAddProductReview'
-import { useReview } from './customHooks/useReview'
+import { useReview } from './useReview/useReview'
 
 export function Review() {
   const {

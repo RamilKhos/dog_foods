@@ -4,7 +4,7 @@ import { Loader } from '../../Loader/Loader'
 import { MainErrorScreen } from '../../MainErrorScreen/MainErrorScreen'
 import { FavouritesGoodsItem } from './FavouritesGoodsItem/FavouritesGoodsItem'
 import { useFavouritesGoods } from './useFavouritesGoods'
-import styles from './favouritesGoodStyles.module.scss'
+import styles from './styles.module.scss'
 
 export function FavouritesGoods() {
   const {

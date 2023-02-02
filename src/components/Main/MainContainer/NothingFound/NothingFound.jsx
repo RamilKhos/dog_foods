@@ -1,6 +1,6 @@
 import logoNouthingFound from '../../../../images/Nothing found.png'
 import { useFilterContextMethods } from '../../../FilterContext/FilterContextProvider'
-import styles from './stylesNotingFound.module.scss'
+import styles from './styles.module.scss'
 
 export function NothingFound({ setInput }) {
   const { setSearch } = useFilterContextMethods()

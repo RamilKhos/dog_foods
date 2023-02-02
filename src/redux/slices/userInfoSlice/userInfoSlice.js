@@ -1,5 +1,5 @@
-/* eslint-disable no-return-assign */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import { USER_INFO_KEY_IN_LS } from '../../../const_variables/const_variables'

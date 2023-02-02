@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { useSelector } from 'react-redux'
-import styles from './cartStylesRightBlock.module.scss'
+import styles from './styles.module.scss'
 import { UnselectedGoods } from './UnselectedGoods/UnselectedGoods'
 import { WithSelectedGoods } from './WithSelectedGoods/WithSelectedGoods'
 

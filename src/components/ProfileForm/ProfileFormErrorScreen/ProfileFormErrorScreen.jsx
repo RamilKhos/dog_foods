@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import styles from './ProfileFormErrorScreenStyles.module.scss'
+import styles from './styles.module.scss'
 import profileFormError from '../../../images/profileFormError.png'
 
 export function ProfileFormErrorScreen() {

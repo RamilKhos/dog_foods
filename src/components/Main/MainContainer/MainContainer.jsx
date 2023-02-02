@@ -5,7 +5,7 @@ import { MainErrorScreen } from '../../MainErrorScreen/MainErrorScreen'
 import { MainCard } from './MainCard/MainCard'
 import { NothingFound } from './NothingFound/NothingFound'
 import { useMainContainer } from './useMainContainer/useMainContainer'
-import style from './searchBarStyles.module.scss'
+import style from './styles.module.scss'
 import { productSorting } from './utils'
 
 export function MainContainer() {

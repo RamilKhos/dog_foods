@@ -24,9 +24,7 @@ export function SignForms() {
       <div className="container">
         <div className="row full-height justify-content-center">
           <div className="col-12 text-center align-self-center">
-            {/* <div className="col-12 text-center align-self-center py-2"> */}
             <div className={`${stylesForm.section} pb-1  text-center`}>
-              {/* <div className={`${stylesForm.section} pb-5 pt-5 pt-sm-2 text-center`}> */}
               <h6 className="mb-0 pb-3">
                 <span>Log In </span>
                 <span>Sign Up</span>

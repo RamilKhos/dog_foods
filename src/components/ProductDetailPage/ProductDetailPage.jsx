@@ -3,10 +3,10 @@
 /* eslint-disable no-shadow */
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import styles from './productDetailPageStyles.module.scss'
+import styles from './styles.module.scss'
 import { Loader } from '../Loader/Loader'
 import { MainErrorScreen } from '../MainErrorScreen/MainErrorScreen'
-import { useProductDetailPage } from './useProductDetailPage'
+import { useProductDetailPage } from './useProductDetailPage/useProductDetailPage'
 import { Review } from './Review/Review'
 
 export function ProductDetailPage() {

@@ -1,4 +1,4 @@
-import styles from '../cartStylesRightBlock.module.scss'
+import styles from '../styles.module.scss'
 
 export function WithSelectedGoods({
   totalDiscountedPrice, finalPriceWithoutDiscount, finalCount, isDiscount,

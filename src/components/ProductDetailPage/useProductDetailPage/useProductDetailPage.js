@@ -1,11 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { PRODUCT_QUERY_KEY } from '../../const_variables/const_variables'
-import { api } from '../../API'
-import { addItem, deleteProductFromCart } from '../../redux/slices/cartSlice/cartSlice'
-import { addItemToFavourites, deleteItemFromFavourites } from '../../redux/slices/favouritesSlice/favouritesSlice'
-import { notifyDeleteProduct } from '../toastify/toastify'
+import { PRODUCT_QUERY_KEY } from '../../../const_variables/const_variables'
+import { api } from '../../../API'
+import { addItem, deleteProductFromCart } from '../../../redux/slices/cartSlice/cartSlice'
+import { addItemToFavourites, deleteItemFromFavourites } from '../../../redux/slices/favouritesSlice/favouritesSlice'
+import { notifyDeleteProduct } from '../../toastify/toastify'
 
 export const useProductDetailPage = () => {
   const { id } = useParams()

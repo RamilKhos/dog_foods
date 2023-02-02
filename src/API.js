@@ -1,4 +1,3 @@
-/* eslint-disable quote-props */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-shadow */
@@ -55,8 +54,6 @@ class API extends React.Component {
     })
   }
 
-  // Получить все продукты, не используется!!!
-  // В useMainContainer находится актуальный запрос с поиском
   showAllProduct() {
     const userInfo = localStorage.getItem(USER_INFO_KEY_IN_LS)
     if (userInfo) {
@@ -146,6 +143,7 @@ class API extends React.Component {
     )
   }
 
+  // Добавить отзыв
   addReview(id, rating, text) {
     const userInfo = localStorage.getItem(USER_INFO_KEY_IN_LS)
     return fetch(`${this.BASE_URL}/products/review/${id}`, {

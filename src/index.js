@@ -15,8 +15,6 @@ import { FilterContextProvider } from './components/FilterContext/FilterContextP
 import { Favourites } from './components/Favourites/Favourites'
 import { AddProduct } from './components/AddProduct/AddProduct'
 
-// const queryClient = new QueryClient()
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

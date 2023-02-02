@@ -3,13 +3,11 @@
     margin-top: 1.2rem;
     padding-left: 1.25rem;
     width: 23.1rem;
-    // border: 2px solid red;
 }
 
 .cart_tab_total_amount__inner {
     position: sticky;
     top: 151px;
-    // border: 2px solid red;
 }
 
 
@@ -17,14 +15,12 @@
     display: inline-block;
     vertical-align: top;
     width: 100%;
-    // border: 2px solid red;
 }
 
 .total_amount__content {
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    // border: 2px solid red;
 }
 
 // Условие заказа
@@ -34,19 +30,16 @@
     line-height: 20px;
     padding: 24px 16px 16px;
     overflow: hidden;
-        // border: 2px solid red;
 }
 
 // Условие заказа
 .total_amount__row, .total_amount__title_bottom_border {
     border-bottom: 1px solid #eee;
-        // border: 2px solid red;
 }
 
 // Блок: итого
 .total_amount__summary_section {
     padding: 16px 16px 20px;
-    // border: 2px solid red;
 }
 
 .summary_header {
@@ -62,7 +55,6 @@
 .summary_header__text {
     display: flex;
     flex-direction: column;
-    // border: 2px solid rgb(234, 255, 0);
 }
 
 // Итого
@@ -70,7 +62,6 @@
     font-size: 12px;
     color: #8c8c8c;
     line-height: 12px;
-    // border: 2px solid rgb(4, 0, 0);
 }
 
 // Количество товаров
@@ -80,7 +71,6 @@
     font-weight: 700;
     line-height: 20px;
     margin-top: .4rem;
-    // border: 2px solid rgb(34, 255, 0);
 }
 
 // Итоговая цена

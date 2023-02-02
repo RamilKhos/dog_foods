@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import styles from './mainsStyle.module.scss'
+import styles from './styles.module.scss'
 
 export function MainCard({
   name, price, pictures, discount, id, stock,

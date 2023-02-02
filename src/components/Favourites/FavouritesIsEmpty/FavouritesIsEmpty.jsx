@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import styles from './favouritesIsEmptyStyles.module.scss'
+import styles from './styles.module.scss'
 import logo from '../../../images/favouritesIsEmpty.png'
 
 export function FavouritesIsEmpty() {

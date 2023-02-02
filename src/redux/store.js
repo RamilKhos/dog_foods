@@ -23,5 +23,3 @@ store.subscribe(() => {
 store.subscribe(() => {
   localStorage.setItem(PRODUCTS_IN_FAVOURITE, JSON.stringify(store.getState().favourites))
 })
-
-store.subscribe(() => console.log(store.getState()))

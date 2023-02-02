@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { deleteUserInfo } from '../../../redux/slices/userInfoSlice/userInfoSlice'
-import styles from './ProfileFormItemStyles.module.scss'
+import styles from './styles.module.scss'
 
 export function ProfileFormItems({
   avatar, name, about, email,

@@ -6,7 +6,7 @@ import { MainErrorScreen } from '../../MainErrorScreen/MainErrorScreen'
 import styles from '../cartStyles.module.scss'
 import { CartWithGoodsLeftBlock } from './CartWithGoodsLeftBlock/CartWithGoodsLeftBlock'
 import { CartWithGoodsRightBlock } from './CartWithGoodsRightBlock/CartWithGoodsRightBlock'
-import { useCartWithGoods } from './customHooks/useCartWithGoods'
+import { useCartWithGoods } from './useCartWithGoods/useCartWithGoods'
 
 export function СartWithGoods() {
   const {

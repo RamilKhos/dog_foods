@@ -11,14 +11,6 @@ export function Footer() {
             <img src={logoDog} height={72} alt="logo_dog" />
             <h3 className={`${stylesFooter.caption}`}>DogFoot</h3>
           </div>
-
-          <div>
-            Navigation
-          </div>
-
-          <div>
-            Contacts
-          </div>
         </div>
       </div>
     </footer>

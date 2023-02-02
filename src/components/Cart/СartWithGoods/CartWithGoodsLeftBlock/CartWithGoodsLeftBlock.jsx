@@ -2,7 +2,7 @@
 import { Checkbox } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-import styles from './cartStylesLeftBlock.module.scss'
+import styles from './styles.module.scss'
 import { useCartWithGoodsLeftBlock } from './useCartWithGoodsLeftBlock'
 
 export function CartWithGoodsLeftBlock({ product }) {

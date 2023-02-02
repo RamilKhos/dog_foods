@@ -1,4 +1,4 @@
-import styles from './mainErrorScreen.module.scss'
+import styles from './styles.module.scss'
 import logoErrorMain from '../../images/error_main.png'
 
 export function MainErrorScreen() {
