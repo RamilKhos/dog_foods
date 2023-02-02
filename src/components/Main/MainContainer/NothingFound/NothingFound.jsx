@@ -1,4 +1,4 @@
-import logoNouthingFound from '../../../../images/Nothing found.png'
+import logoNouthingFound from '../../../../images/Nothing_found.png'
 import { useFilterContextMethods } from '../../../FilterContext/FilterContextProvider'
 import styles from './styles.module.scss'
 

@@ -40,6 +40,8 @@ export const useProductDetailPage = () => {
     mutationFn: () => api.deleteProductById(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['product' - id] })
+      dispatch(deleteProductFromCart(id))
+      dispatch(deleteItemFromFavourites(id))
       notifyDeleteProduct('Товар успешно удален!')
       navigate('/')
     },

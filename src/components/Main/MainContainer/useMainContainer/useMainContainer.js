@@ -9,7 +9,6 @@ import { useDebounce } from '../useDebounce/useDebounce'
 
 export const useMainContainer = () => {
   const { token } = useSelector((store) => store.userInfo)
-
   const navigate = useNavigate()
 
   const [searchParams, setSearchParams] = useSearchParams()
