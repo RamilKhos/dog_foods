@@ -1,31 +1,56 @@
+import { useNavigate } from 'react-router-dom'
+import styles from './styles.module.scss'
+
 export function MainCard({
-  name, price, pictures, stock,
+  name, price, pictures, discount, id, stock,
 }) {
+  const navigate = useNavigate()
+
+  const clickBoxHandler = () => {
+    navigate(`/product/${id}`)
+  }
+
   return (
-    <div className="col text-start">
-      <div className="card shadow p-3 bg-light rounded-3 ">
 
-        <img src={pictures} className="card-img-top rounded mb-4" alt="{name}" />
+    <div className={`${styles.container}`}>
+      <div className={`${styles.card}`}>
+        <button onClick={clickBoxHandler} type="button" aria-label="">
+          <div className={`${styles.box}`}>
 
-        <h3 className="card-title fs-5 fw-bold">
-          {price}
-          {' '}
-          ₽
-        </h3>
+            {discount
+              ? (
+                <div className={styles.icon_sales}>
+                  <div className={styles.sales}>{`-${discount}%`}</div>
+                </div>
+              )
+              : null}
 
-        <h5 className="card-title fs-6 text-black-50">
-          {stock}
-          {' '}
-          шт.
-        </h5>
+            <div className={`${styles.content}`}>
 
-        <div>
-          <h6 className="mb-4 fs-5">{name}</h6>
-        </div>
-        <div className="stars d-flex justify-content-center gap-3" />
+              <img src={pictures} className="card-img-top rounded mb-4" alt="{name}" />
 
-        <button type="button" className="btn btn-warning rounded-pill fw-bold fs-6">В корзину</button>
+              <div className={`${styles.about}`}>
+                <h6>{name}</h6>
 
+                {discount
+                  ? (
+                    <div className={styles.product_price}>
+                      <span className={styles.sale_price}>{`₽${price - (price * (discount / 100))}`}</span>
+                      <span className={styles.offer_price_overline}>{`₽${price}`}</span>
+                    </div>
+                  )
+                  : (
+                    <div className={styles.product_price}>
+                      <span className={styles.offer_price}>{`₽${price}`}</span>
+                    </div>
+                  )}
+
+                <h5>{`В наличии: ${stock} шт.`}</h5>
+              </div>
+
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   )

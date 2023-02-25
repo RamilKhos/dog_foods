@@ -1,0 +1,178 @@
+// Правый блок
+.cart_tab_total_amount {
+    margin-top: 1.2rem;
+    padding-left: 1.25rem;
+    width: 23.1rem;
+}
+
+.cart_tab_total_amount__inner {
+    position: sticky;
+    top: 151px;
+}
+
+
+.total_amount {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.total_amount__content {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+// Условие заказа
+.total_amount__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 24px 16px 16px;
+    overflow: hidden;
+}
+
+// Условие заказа
+.total_amount__row, .total_amount__title_bottom_border {
+    border-bottom: 1px solid #eee;
+}
+
+// Блок: итого
+.total_amount__summary_section {
+    padding: 16px 16px 20px;
+}
+
+.summary_header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    text-align: center;
+    // border: 2px solid red;
+}
+
+.summary_header__text {
+    display: flex;
+    flex-direction: column;
+}
+
+// Итого
+.summary_header__total {
+    font-size: 12px;
+    color: #8c8c8c;
+    line-height: 12px;
+}
+
+// Количество товаров
+.summary_header__total_items {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-top: .4rem;
+}
+
+// Итоговая цена
+.summary__price .price__block_main {
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 1.3rem;
+}
+
+// Блок: цена
+.cart_items__product_block_amount {
+    min-width: 5rem;
+    flex-shrink: 0;
+    max-width: 100%;
+    margin-left: 1rem;
+}
+
+.cart_items__product_price {
+    min-width: inherit;
+    display: inline-block;
+}
+
+.price__block_price_offer {
+    font-size: 1.1rem;
+    line-height: 1rem;
+    margin-bottom: 2px;
+    font-weight: 500;
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+}
+
+.price__block_price_offer_crossed_out {
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: .1rem;
+    text-decoration: line-through;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+}
+
+.price__sales {
+    font-size: 1.1rem;
+    line-height: 1rem;
+    margin-bottom: 2px;
+    color: red;
+    font-weight: 500;
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+}
+
+// Блок кнопки оформления
+.total_amount__buttons_section {
+    padding: 0 16px 16px;
+}
+
+
+.buy_button {
+    height: 64px;
+    width: 100%;
+    padding: 15px;
+}
+
+// Текст кнопки
+.base_ui_button_v2_brand {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 700;
+    height: 2.8rem;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow .2s;
+  }
+  
+  .base_ui_button_v2_brand:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  }
+
+  .unselected_text {
+    font-weight: bold;
+    font-size: .8rem;
+  }

@@ -1,0 +1,78 @@
+ .cart_page_new {
+    width: 100%;
+    padding-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 65rem;
+    // background: #f9f6f6;
+
+    flex-grow: 1;
+}
+
+// Корзина
+.cart_title {
+    font-family: PT Sans,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    margin: 0 10px .5rem 0;
+    color: #E0DAAE;
+}
+
+.cart_tab_content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+}
+
+.mass_selection {
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    height: 48px;
+    margin: 0;
+    padding: 12px 8px;
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.18);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mass_selection__choose_all {
+    margin-right: 20px;
+    transition: color .3s;
+    display: flex;
+    align-items: baseline;
+    position: relative;
+}
+
+.mass_selection__delete_btn {
+    color: grey;
+    transition: color .3s;
+}
+
+
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.breadcrumb span{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-left: 8px;
+    // text-decoration: none;
+}
+.breadcrumb span:not(:last-child)::after {
+    content: '/';
+}
+
+
+.btn:disabled,
+.btn[disabled]{
+  color: #999999;
+}

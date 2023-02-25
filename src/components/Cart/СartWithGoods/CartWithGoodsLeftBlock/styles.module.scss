@@ -1,0 +1,241 @@
+// Левый блок
+.cart_tab_products_list {
+    width: calc(100% - .5rem);
+}
+
+.cart_items__product {
+    display: inline-block;
+    border-radius: 8px;
+    clear: both;
+    padding: 24px 0;
+    background: #fff;
+    
+    margin-top: 20px;
+    box-shadow: 0 2px 2px rgb(163, 157, 157);
+    box-sizing: border-box;
+
+    width: 45rem;
+    position: relative;
+}
+
+.cart_items__content_container {
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+
+    position: relative;
+}
+
+.boa {
+    position: absolute;
+    top: -25%;
+    left: -3%;
+}
+
+// Блок товар + количество + цена
+.cart_items__wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+// Блок товара: картинка + описание 
+.cart_items__product_thumbnail {
+    border: none;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.cart_items__select_wrapper {
+    width: 0;
+}
+
+// checkbox
+.cart_items__checkbox {
+    position: absolute;
+    top: -1.6rem;
+    left: -1.415rem;
+}
+
+// Картинка товара
+.cart_items__product_image_wrap {
+    margin: 0;
+    width: 10rem;
+}
+
+// Картинка товара линк
+.cart_items__product_image_link {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+// Картинка товара
+.cart_items__product_image_img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+// Блок: наименование продукта
+.cart_items__product_info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 18px;
+    padding-right: 6px;
+    width: 100%;
+    max-width: 358px;
+}
+
+.cart_items__product_caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+// наименование продукта
+.cart_items__product_name {
+    overflow: hidden;
+    margin-bottom: .5rem;
+    min-width: 14vw;
+    line-height: 1.5em;
+}
+
+// наименование продукта линк
+.base_ui_link, .base_ui_link:focus {
+    color: #333;
+    text-decoration: none;
+}
+.base_ui_link {
+    transition-duration: .3s;
+    transition-property: color;
+}
+
+
+// удалить - корзина
+.menu_control_button {
+    padding: 0;
+    color: #c00808;
+    font-size: 1.2rem;
+    line-height: 1.428571429;
+
+    position: absolute;
+    top: 80%;
+    right: 4%;
+}
+
+
+
+// Блок количества товаров
+.count_buttons {
+    width: 91px;
+    height: 44px;
+    position: relative;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    // margin-right: 3rem;
+}
+
+// Кнопки + и -
+.count_buttons__button {
+    color: #afafaf;
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+}
+
+
+
+// кнопка минус
+.count_buttons__button_minus {
+    left: 0;
+}
+.count_buttons__button_minus:disabled {
+    cursor: not-allowed;
+}
+
+// Кнопки + и -
+.count_buttons__icon {
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+// количество - значение
+.field_count {
+    font-size: 1rem;
+    line-height: 2.7rem;
+    text-align: center;
+    width: 33.33333%;
+    height: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+    color: #4e4e4e;
+    border: none;
+}
+
+
+// Кнопка +
+.count_buttons__button_plus {
+    right: 0;
+}
+.count_buttons__button_plus:disabled {
+    cursor: not-allowed;
+}
+
+
+
+// Блок: цена
+.cart_items__product_block_amount {
+    min-width: 5rem;
+    flex-shrink: 0;
+    max-width: 100%;
+    margin-left: 1rem;
+
+}
+
+.cart_items__product_price {
+    min-width: inherit;
+    display: inline-block;
+}
+
+.price__block_price_offer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+    font-weight: 700;
+    margin-bottom: .1rem;
+}
+
+.price__block_price_offer_crossed_out {
+    text-decoration: line-through;
+}
+
+.price__sales {
+    font-size: 1.1rem;
+    line-height: 1rem;
+    margin-bottom: 2px;
+    color: red;
+    font-weight: 700;
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+}

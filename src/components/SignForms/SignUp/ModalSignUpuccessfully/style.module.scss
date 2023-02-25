@@ -1,0 +1,45 @@
+// body {
+//     margin-bottom: 100px;
+//   }
+  .container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 23rem;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .upper_side {
+    padding: 2em;
+    background-color: #8bc34a;
+    color: #fff;
+    border-top-left-radius: 50px;
+  }
+
+  .checkMark {
+    height: 12rem;
+  }
+    
+  .lower_side {
+    padding: 3em;
+    background: #fff;
+    border-bottom-right-radius: 50px;
+  }
+  
+  .message {
+    margin: 2em;
+    color: #8bc34a;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  .p {
+    color: #1f2029;
+    font-size: .9rem;
+  }

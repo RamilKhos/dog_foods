@@ -1,14 +1,22 @@
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { MainContainer } from './MainContainer/MainContainer'
-import stylesMain from './mainStyles.module.scss'
+import styles from './MainContainer/styles.module.scss'
 
 export function Main() {
+  const { token } = useSelector((store) => store.userInfo)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!token) {
+      navigate('login')
+    }
+  }, [])
+
   return (
-    <div className="container">
-      <div className={stylesMain.main}>
-
-        <MainContainer />
-
-      </div>
+    <div className={styles.cont_graw}>
+      <MainContainer />
     </div>
   )
 }

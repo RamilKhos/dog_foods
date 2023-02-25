@@ -1,13 +1,32 @@
 const BASE_URL = 'https://api.react-learning.ru'
-const TOKEN_KEY_IN_LS = 'token'
-const DATA_KEY_IN_LS = 'data'
-const GROUP_ID = '/v2/sm8'
+const BASE_URL_GET_PRODUCTS = 'https://api.react-learning.ru/products/search?'
+const GROUP_ID = 'sm8'
+const SIGN_UP_DATA_KEY_IN_LS = 'SignUp_data'
 const CONTENT_TYPE = 'application/json'
+const TOKEN_KEY_IN_LS = 'token'
+const USER_INFO_KEY_IN_LS = 'user_info'
+const PRODUCTS_IN_CART = 'products_in_cart'
+const PRODUCTS_IN_FAVOURITE = 'products_in_favourite'
+const PRODUCT_QUERY_KEY = 'PRODUCT_KEY'
+const PRODUCTS_TO_CART = ['PRODUCTS_TO_CART']
+const PRODUCTS_IS_FAVOURITE = ['PRODUCTS_IS_FAVOURITE']
+const PRODUCTS_SEARCH_QUERY_KEY = ['PRODUCTS_SEARCH_QUERY_KEY']
+
+const REVIEWS_PRODUCT = 'REVIEWS_PRODUCT'
 
 export {
   BASE_URL,
+  BASE_URL_GET_PRODUCTS,
   GROUP_ID,
   CONTENT_TYPE,
   TOKEN_KEY_IN_LS,
-  DATA_KEY_IN_LS,
+  SIGN_UP_DATA_KEY_IN_LS,
+  PRODUCT_QUERY_KEY,
+  PRODUCTS_TO_CART,
+  PRODUCTS_SEARCH_QUERY_KEY,
+  PRODUCTS_IN_CART,
+  PRODUCTS_IN_FAVOURITE,
+  PRODUCTS_IS_FAVOURITE,
+  USER_INFO_KEY_IN_LS,
+  REVIEWS_PRODUCT,
 }
