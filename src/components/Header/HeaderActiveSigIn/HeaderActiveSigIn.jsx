@@ -24,7 +24,7 @@ export function HeaderActiveSigIn() {
     <div className="d-flex justify-content-between align-items-center">
       <Link to="/" className="d-flex align-items-center text-decoration-none text-dark">
         <img src={logoDog} className="mh-100" width={72} alt="logo_dog" />
-        <h3 className={`${stylesHeader.caption} ms-1`}>DogFoot</h3>
+        <h3 className={`${stylesHeader.caption} ms-1`}>DogFood</h3>
       </Link>
 
       <div className="d-flex justify-content-between align-items-center gap-3">

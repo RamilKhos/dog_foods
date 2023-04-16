@@ -9,6 +9,7 @@ import { notifyDeleteProduct } from '../../toastify/toastify'
 
 export const useProductDetailPage = () => {
   const { id } = useParams()
+
   const dispatch = useDispatch()
   const queryClient = useQueryClient()
   const navigate = useNavigate()

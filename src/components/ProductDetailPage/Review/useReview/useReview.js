@@ -8,9 +8,7 @@ import { notifySuccess } from '../../../toastify/toastify'
 export const useReview = () => {
   const { id } = useParams()
   const queryClient = useQueryClient()
-
   const [isModalOpen, setIsModalOpen] = useState(false)
-
   const openModal = () => {
     setIsModalOpen(true)
   }
@@ -19,13 +17,11 @@ export const useReview = () => {
     setIsModalOpen(false)
   }, [])
 
-  // Получить отзывы к товару
   const { data: review, isLoading } = useQuery({
     queryKey: ['REVIEWS_PRODUCT'].concat(id),
     queryFn: () => api.getReviewProductById(id).then((res) => res.json()),
   })
 
-  // Добавить отзыв
   const { mutate } = useMutation({
     mutationFn: (formPayload) => api.addReview(
       id,
