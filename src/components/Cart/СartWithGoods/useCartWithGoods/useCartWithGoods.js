@@ -25,7 +25,6 @@ export const useCartWithGoods = () => {
       .then((response) => Promise.all(response.map((product) => product.json()))),
   })
 
-  console.log(products)
   return {
     products,
     isError,

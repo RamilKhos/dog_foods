@@ -24,7 +24,6 @@ export function useSignIn() {
     }),
 
     onSuccess: (data) => {
-      console.log(data)
       dispatch(addUserInfo({ token: data.token, userID: data.data._id, group: data.data.group }))
       queryClient.invalidateQueries({ queryKey: ['signIn'] })
       return navigate('/')

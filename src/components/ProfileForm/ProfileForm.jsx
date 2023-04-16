@@ -17,8 +17,6 @@ export function ProfileForm() {
       }),
   })
 
-  console.log(data)
-
   if (isLoading || isFetching) return <Loader />
   if (isError) return <ProfileFormErrorScreen />
 
