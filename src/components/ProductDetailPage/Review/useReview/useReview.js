@@ -25,6 +25,8 @@ export const useReview = () => {
     queryFn: () => api.getReviewProductById(id).then((res) => res.json()),
   })
 
+  console.log(review)
+
   // Добавить отзыв
   const { mutate } = useMutation({
     mutationFn: (formPayload) => api.addReview(

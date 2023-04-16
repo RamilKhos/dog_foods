@@ -12,6 +12,7 @@ export const useMainContainer = () => {
   const navigate = useNavigate()
 
   const [searchParams, setSearchParams] = useSearchParams()
+
   const [input, setInput] = useState(() => searchParams.get('q') ?? '')
   const [sort, setSort] = useState(() => searchParams.get('sort') ?? 'POPULAR')
 

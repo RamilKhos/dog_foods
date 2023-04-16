@@ -9,7 +9,7 @@ export function Footer() {
 
           <div className="d-flex align-items-center">
             <img src={logoDog} height={72} alt="logo_dog" />
-            <h3 className={`${stylesFooter.caption}`}>DogFoot</h3>
+            <h3 className={`${stylesFooter.caption}`}>DogFood</h3>
           </div>
         </div>
       </div>
